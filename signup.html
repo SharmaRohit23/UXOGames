@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device‑width, initial‑scale=1.0" />
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>Unixgame• Sign Up</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background: #0b0e14 url('https://images.unsplash.com/photo-1555190767-4ecacd1c390f?auto=compress&dpr=2') center/cover fixed;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1000px;
+      width: 100%;
+      background: rgba(15, 20, 30, 0.85);
+      border-radius: 16px;
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(0, 160, 255, 0.2);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 100, 200, 0.3);
+    }
+
+    .art {
+      flex: 1;
+      min-height: 500px;
+      background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=compress') center/cover;
+      position: relative;
+    }
+
+    .art::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 20, 40, 0.9));
+    }
+
+    .art-content {
+      position: absolute;
+      inset: 0;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: #fff;
+    }
+
+    .art-content h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .art-content p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      max-width: 400px;
+    }
+
+    .auth {
+      flex: 1.2;
+      padding: 40px;
+      color: #e0e0e0;
+    }
+
+    .auth h2 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      color: #00e0ff;
+      text-shadow: 0 0 8px rgba(0, 224, 255, 0.4);
+    }
+
+    .auth p {
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+      opacity: 0.8;
+    }
+
+    .input-group {
+      margin-bottom: 18px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      color: #c0d0ff;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 120, 255, 0.4);
+      background: rgba(10, 15, 25, 0.8);
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .input-group input:focus {
+      box-shadow: 0 0 0 2px rgba(0, 160, 255, 0.5);
+      border-color: #00e0ff;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #0090ff, #00d0ff);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0, 120, 255, 0.4);
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #00a0ff, #00e0ff);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0, 120, 255, 0.5);
+    }
+
+    .divider {
+      margin: 24px 0;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #90a0c0;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .divider span {
+      padding: 0 12px;
+    }
+
+    .social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-btn {
+      flex: 1;
+      padding: 10px 8px;
+      border-radius: 6px;
+      border: none;
+      background: rgba(30, 40, 60, 0.8);
+      color: #e0e0e0;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .social-btn:hover {
+      background: rgba(40, 55, 80, 0.9);
+    }
+
+    .social-btn i {
+      font-size: 1.1rem;
+    }
+
+    .extra {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      text-align: center;
+      color: #90a0c0;
+    }
+
+    .extra a {
+      color: #00d0ff;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .extra a:hover {
+      text-shadow: 0 0 8px rgba(0, 200, 255, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        max-width: 420px;
+      }
+
+      .art {
+        min-height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="art">
+      <div class="art-content">
+        <h1>JOIN Community</h1>
+        <p>Sign up and unlock exclusive in‑game rewards, ranked matches, and tournaments.</p>
+      </div>
+    </div>
+    <div class="auth">
+      <h2>Sign Up</h2>
+      <p>Fill in your details to create your gaming profile.</p>
+      <form action="/signup" method="post">
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Choose your gamer tag" required />
+        </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" required />
+        </div>
+        <div class="input-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="••••••••" required />
+        </div>
+        <button type="submit" class="btn">CREATE ACCOUNT</button>
+      </form>
+
+      <!--<div class="divider"><span>Or sign up with</span></div>
+      <div class="social">
+        <button class="social-btn">
+          <i>Google</i>
+        </button>
+        <button class="social-btn">
+          <i>Discord</i>
+        </button>
+      </div>-->
+
+      <div class="extra">
+        Already have an account? <a href="/login">Log in</a>.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
